@@ -1,0 +1,97 @@
+<?xml version="1.0"?>
+<wsdl:definitions xmlns:s0="urn:ws_ipicyt_glpi_Creation" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:ws_ipicyt_glpi_Creation">
+<wsdl:types>
+<xsd:schema elementFormDefault="qualified" targetNamespace="urn:ws_ipicyt_glpi_Creation">
+<xsd:element name="CREATE" type="s0:InputMapping1"/>
+<xsd:complexType name="InputMapping1">
+<xsd:sequence>
+<xsd:element minOccurs="1" name="Tipo" type="s0:TipoType"/>
+<xsd:element minOccurs="1" maxOccurs="1" name="Folio_MST" type="xsd:string"/>
+<xsd:element minOccurs="1" maxOccurs="1" name="Nombre_del_Usuario" type="xsd:string"/>
+<xsd:element minOccurs="1" maxOccurs="1" name="Aplicativo" type="xsd:string"/>
+<xsd:element minOccurs="1" maxOccurs="1" name="Tipo_de_Solicitud" type="xsd:string"/>
+<xsd:element minOccurs="1" maxOccurs="1" name="Descripcion" type="xsd:string"/>
+<xsd:element minOccurs="1" maxOccurs="1" name="CATEGORIA_OPERACIONAL_1" type="s0:CATEG_OP_1_type"/>
+<xsd:element minOccurs="1" maxOccurs="1" name="CATEGORIA_OPERACIONAL_2" type="s0:CATEG_OP_2_type"/>
+<xsd:element minOccurs="1" maxOccurs="1" name="CATEGORIA_OPERACIONAL_3" type="s0:CATEG_OP_3_type"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:simpleType name="TipoType">
+<xsd:restriction base="xsd:string">
+<xsd:enumeration value="Incidente"/>
+<xsd:enumeration value="Requerimiento"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="CATEG_OP_1_type">
+<xsd:restriction base="xsd:string">
+<xsd:enumeration value="APLICACIONES"/>
+<xsd:enumeration value="INFRAESTRUCTURA DE REDES Y TELECOMUNICACIONES"/>
+<xsd:enumeration value="INFRAESTRUCTURA DE SERVIDORES"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="CATEG_OP_2_type">
+<xsd:restriction base="xsd:string">
+<xsd:enumeration value="ATENCION DE APLICACIONES"/>
+<xsd:enumeration value="SERVIDORES"/>
+<xsd:enumeration value="SISTEMA OPERATIVO"/>
+<xsd:enumeration value="BASE DE DATOS"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="CATEG_OP_3_type">
+<xsd:restriction base="xsd:string">
+<xsd:enumeration value="ACTUALIZAR"/>
+<xsd:enumeration value="CONFIGURAR"/>
+<xsd:enumeration value="SOPORTAR"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:element name="CREATEResponse" type="s0:OutputMapping1"/>
+<xsd:complexType name="OutputMapping1">
+<xsd:sequence>
+<xsd:element minOccurs="0" name="Resultado" type="xsd:string"/>
+<xsd:element name="Incident_ID" type="xsd:string"/>
+<xsd:element name="Estado" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:element name="AuthenticationInfo" type="s0:AuthenticationInfo"/>
+<xsd:complexType name="AuthenticationInfo">
+<xsd:sequence>
+<xsd:element minOccurs="1" name="authToken" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:schema>
+</wsdl:types>
+<wsdl:message name="CREATESoapOut">
+<wsdl:part element="s0:CREATEResponse" name="parameters"> </wsdl:part>
+</wsdl:message>
+<wsdl:message name="ARAuthenticate">
+<wsdl:part element="s0:AuthenticationInfo" name="parameters"> </wsdl:part>
+</wsdl:message>
+<wsdl:message name="CREATESoapIn">
+<wsdl:part element="s0:CREATE" name="parameters"> </wsdl:part>
+</wsdl:message>
+<wsdl:portType name="ws_ipicyt_glpi_CreationPortPortType">
+<wsdl:operation name="CREATE">
+<wsdl:input message="s0:CREATESoapIn"> </wsdl:input>
+<wsdl:output message="s0:CREATESoapOut"> </wsdl:output>
+</wsdl:operation>
+</wsdl:portType>
+<wsdl:binding name="ws_ipicyt_glpi_CreationPortSoapBinding" type="s0:ws_ipicyt_glpi_CreationPortPortType">
+<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+<wsdl:operation name="CREATE">
+<soap:operation soapAction="urn:ws_ipicyt_glpi_Creation/CREATE" style="document"/>
+<wsdl:input>
+<soap:header message="s0:ARAuthenticate" part="parameters" use="literal"> </soap:header>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+</wsdl:binding>
+<wsdl:service name="ws_ipicyt_glpi_CreationService">
+<wsdl:documentation>Creación de incidentes para el IPICyT</wsdl:documentation>
+<wsdl:port binding="s0:ws_ipicyt_glpi_CreationPortSoapBinding" name="ws_ipicyt_glpi_CreationPortSoap">
+<soap:address location="http://10.100.10.3:3001/services/ws_ipicyt_glpi_Creation"/>
+</wsdl:port>
+</wsdl:service>
+</wsdl:definitions>
