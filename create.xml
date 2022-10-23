@@ -12,11 +12,11 @@
          <urn:Folio_MST>4K</urn:Folio_MST>
          <urn:Nombre_del_Usuario>RAFAEL</urn:Nombre_del_Usuario>
          <urn:Aplicativo>REMEDY</urn:Aplicativo>
-         <urn:Tipo_de_Solicitud>?</urn:Tipo_de_Solicitud>
-         <urn:Descripcion>?</urn:Descripcion>
-         <urn:CATEGORIA_OPERACIONAL_1>?</urn:CATEGORIA_OPERACIONAL_1>
-         <urn:CATEGORIA_OPERACIONAL_2>?</urn:CATEGORIA_OPERACIONAL_2>
-         <urn:CATEGORIA_OPERACIONAL_3>?</urn:CATEGORIA_OPERACIONAL_3>
+         <urn:Tipo_de_Solicitud>gfghjh</urn:Tipo_de_Solicitud>
+         <urn:Descripcion>jdfjs</urn:Descripcion>
+         <urn:CATEGORIA_OPERACIONAL_1>APLICACIONES</urn:CATEGORIA_OPERACIONAL_1>
+         <urn:CATEGORIA_OPERACIONAL_2>ATENCION DE APLICACIONES</urn:CATEGORIA_OPERACIONAL_2>
+         <urn:CATEGORIA_OPERACIONAL_3>ACTUALIZAR</urn:CATEGORIA_OPERACIONAL_3>
       </urn:CREATE>
    </soapenv:Body>
 </soapenv:Envelope>

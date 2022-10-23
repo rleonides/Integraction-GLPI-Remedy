@@ -10,7 +10,7 @@ const sampleHeaders = {
 };
 const xml =  fs.readFileSync('./create.xml','utf-8');
 
-// usage of module
+
 (async () => {
   const { response } = await soapRequest({ url: url, headers: sampleHeaders, xml: xml, timeout: 1000 }); // Optional timeout parameter(milliseconds)
   const { headers, body, statusCode } = response;
