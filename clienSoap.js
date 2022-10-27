@@ -8,7 +8,7 @@ const sampleHeaders = {
   'Content-Type': 'text/xml;charset=UTF-8',
   'soapAction': 'urn:ws_ipicyt_glpi_Creation/CREATE',
 };
-const xml =  fs.readFileSync('./create.xml','utf-8');
+const xml =  fs.readFileSync(__dirname + './create.xml','utf-8');
 
 
 (async () => {
