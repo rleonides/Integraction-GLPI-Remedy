@@ -8,4 +8,7 @@ Usuario y contraseña VPN
 Usuario: omar.cruz
 Contraseña:Om4r2022#
 
-
+GLPI v10
+La dirección IP de acceso es 10.102.53.3
+Usuario: rafael.perez
+Contraseña: rafael.perez
